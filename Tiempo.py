@@ -1,16 +1,22 @@
 import requests
 import pandas as pd
 
-#Cambiar PATH del excel con la lista de los PDF hash	
-df = pd.read_excel('C:/Users/ilici/OneDrive - Facultad de Cs Económicas - UBA/Facultad/Tesis/Tiempo.xls')
-link = df['STR'].tolist()
-Nombre = df['STR'].tolist()
+#Create list of dates from 20210901 to 20211031 in format YYYYMMDD using pandas
+dates = pd.date_range('20210801', periods=61, freq='D')
+#Fomat dates YYYYMMDD
+dates = dates.strftime('%Y%m%d')
 
-for i, j in zip(link, Nombre):
+
+#Cambiar PATH del excel con la lista de los PDF hash	
+#df = pd.read_excel('C:/Users/ilici/OneDrive - Facultad de Cs Económicas - UBA/Facultad/Tesis/Tiempo.xls')
+#link = df['STR'].tolist()
+#Nombre = df['STR'].tolist()
+
+for i in dates:
         
         server_endpoint = "https://ssl.smn.gob.ar/dpd/descarga_opendata.php?file=observaciones/datohorario"+str(i)+".txt"
         #PATH de guardado
-        local_file_path = "C:/Users/ilici/OneDrive - Facultad de Cs Económicas - UBA/Facultad/Tesis/"+str(j)+".csv"
+        local_file_path = "C:/Users/ilici/OneDrive - Facultad de Cs Económicas - UBA/Facultad/Tesis/"+str(i)+".csv"
         
         def download_file_from_server_endpoint(server_endpoint, local_file_path):
 

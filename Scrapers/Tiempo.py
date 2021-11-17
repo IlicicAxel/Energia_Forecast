@@ -7,11 +7,6 @@ dates = pd.date_range('20210801', periods=61, freq='D')
 dates = dates.strftime('%Y%m%d')
 
 
-#Cambiar PATH del excel con la lista de los PDF hash	
-#df = pd.read_excel('C:/Users/ilici/OneDrive - Facultad de Cs Económicas - UBA/Facultad/Tesis/Tiempo.xls')
-#link = df['STR'].tolist()
-#Nombre = df['STR'].tolist()
-
 for i in dates:
         
         server_endpoint = "https://ssl.smn.gob.ar/dpd/descarga_opendata.php?file=observaciones/datohorario"+str(i)+".txt"

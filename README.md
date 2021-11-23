@@ -4,6 +4,7 @@ Este repositorio de GitHub es presentado en conjunto con la tesis de grado, pose
 Se desarrolla de la siguiente manera:
 
 Utilizando el archivo "BASE.csv" y la notebook denominada "Energia_EDA.ipynb" se realiza un análisis de las series a utilizar, limpiando las mismas de outliers y datos nulos, dando como resultado el archivo llamado "BASEo.csv" que contiene la información relativa hasta septiembre 2021 y el archivo "oct.xlsx" que contiene la información de octubre 2021.
+Algunos gráficos se construyen con el archivo "Fuente Chart.xlsx" que contiene datos transformados a mano.
 
 A continuación, se agregan los regresores analizados dando como resultado el archivo "BASEi.xlsx". Este archivo es utilizado como input para los modelos dentro de la carpeta "Modelos", para finalmente comparar el rendimiento de estos con la información dentro de "oct.xlsx" y los forecast de CAMMESA que se encuentran en "Forecast CAMMESA.csv".
 
